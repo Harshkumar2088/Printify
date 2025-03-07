@@ -1,0 +1,303 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  font-family: "Roboto", sans-serif;
+}
+
+:root{
+  --primary-color: rgb(67, 180, 99)
+}
+
+.navbar{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* padding: 0.8rem 2rem; */
+  /* background-color: rgb(227, 227, 255); */
+  position: fixed;  
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  box-shadow: 1px 1px 8px #e7e7e7;
+  background-color: white;
+}
+
+.logo{
+  width: 8rem;
+  height: auto;
+}
+
+
+@media (max-width: 500px) {
+  .logo{
+    
+    width: 8rem;
+    height: auto;
+      position: absolute;
+      left: 20%;
+      clip : rect(0px , 25px , 50px , 0px)
+    }
+}
+/* .logo img{
+  
+
+} */
+
+.menus{
+  /* display: flex; */
+  align-items: center;
+  gap: 1.5rem;
+  text-transform: capitalize;
+}
+
+.menuItem{
+  position: relative;
+  padding: 0.8rem 0.2rem;
+}
+
+.dropdown{
+  /* position: absolute;
+  top: 4rem; */
+  border-radius: 2px;
+  /* padding: 0.6rem 0.2rem; */
+  background-color: white;
+  z-index: 10;
+  box-shadow: -2px -2px 5px #e9e9e9 , 2px 2px 2px #ccc;
+  max-height: 0; 
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.4s ease-in-out, opacity 0.4s ease-in-out; 
+}
+
+
+.dropdown-active{
+   max-height: 300px; 
+  opacity: 1; 
+}
+.dropdown-hidden{
+   max-height: 0; 
+  opacity: 0; 
+
+}
+
+.dropItems{
+  /* background-color: wheat; */
+  padding: 0.3rem 0.8rem;
+  display: block;
+  
+}
+
+
+.dropItems:hover, .menuItem:hover{
+  color: var(--primary-color);
+  cursor: pointer;
+}
+
+
+/* for responsive navbar hamburger */
+.expandBtn:active{
+  /* border: 2px solid #ccc;
+  border-radius: 4px;
+  padding: 0 0.2rem; */
+
+}
+
+.slider {
+  width: 300px; 
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: -320px; 
+  background-color: white;
+  box-shadow: 2px 2px 5px #ccc;
+  overflow: hidden;
+  /* opacity: 0; */
+  transition: all 0.4s ease-in-out; /* Smooth transition for both left and opacity */
+}
+
+.slider-active {
+  left: 0; /* Move the slider into view */
+  opacity: 1; /* Make it fully visible */
+}
+
+.overlay-active {
+  background-color: rgba(165, 165, 165, 0.245); /* Semi-transparent gray background */
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9; /* Ensure it covers content but not the slider */
+}
+
+@media (max-width: 320px) {
+            .slider {
+                width: 250px;
+            }
+}
+
+
+/*error page */
+.errorText{
+  color: var(--primary-color);
+}
+
+.errorBg{
+  
+  background-color: var(--primary-color);
+}
+
+
+/*home*/
+.home{
+  padding-top: 5rem;
+}
+
+.hero-btn{
+  padding: 0.8rem 2rem;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+/* home > hero section*/
+@media (max-width: 800px) {
+            .hero {
+                padding: 1rem 2rem 5rem 2rem;
+            }
+}
+
+/* connect store section */
+.connect-logo {
+    position: absolute;
+    top: 50%; 
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: all 1s ease-in-out; 
+}
+
+.connect-logo.animated {
+    opacity: 1;
+    transform: translate(0, 0);
+}
+
+
+@media (min-width: 900px) {
+  .connect {
+    background-image: url('assets/connect/stores-background.svg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    z-index: -20;
+    opacity: 0;
+    transform: scale(0.5); 
+    transition: all 0.5s ease-in-out;
+  }
+
+  .connect.animated {
+    opacity: 1;
+    transform: scale(1); 
+  }
+}
+
+.check:hover{
+  scale: 1.1;
+}
+
+
+/* footer-section-2/3 */
+@media (max-width : 400px) {
+  .links{
+    gap: 3rem;
+  }
+  
+}
+
+.footerHeadings{
+  font-weight: 500;
+  padding: 1rem 0rem;
+  font-size: larger;
+  width: 6.5rem;
+}
+
+.footerLinks{
+  display: block;
+  margin: 0.4rem 0;
+  font-size: small;
+}
+
+
+.footerLinks:hover{
+  color: var(--primary-color);
+  cursor: pointer;
+}
+
+
+/*review*/
+.custom-arrow {
+    position: absolute;
+    top: 100%;
+    transform: translateY(50%);
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.next-arrow {
+    right: 10px;
+}
+
+.prev-arrow {
+    left: 10px;
+}
+
+.custom-dots {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding-top: 10px;
+}
+
+
+/* add design*/
+.design{
+  background-image: url('assets/addDesign/arrow-down.png');
+  background-repeat: no-repeat;
+  background-position: top center;
+}
+
+.design-bg{
+  background-color: var(--primary-color);
+
+}
+
+.allProducts-btn{
+  color: var(--primary-color);
+  font-weight: 500;
+}
+
+.heading1{
+  color: var(--primary-color);
+  text-transform: uppercase;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+.heading2{
+  font-size: 1.1rem;
+  text-transform: none;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+
+
+
