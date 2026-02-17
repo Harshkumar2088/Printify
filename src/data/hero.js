@@ -7,7 +7,11 @@ export const checkPoints = [
 
     " 100% Free to use",
     "900+ High - Quality Products",
-    "Largest global print network"
+    "Largest global print network",
+    "The price is the same as if you were to print the product yourself",
+    "Easy to replace products",
+    "24/7 Customer Support"
+
 
 ]
 
